@@ -33,7 +33,7 @@ Hides the player's confirmation box.
 `CONFIRM_BOX_UPDATE_RATE`: default update rate for the timer, how smaller is, how smooth is the bar effect (low values may impact your performance).<br>
 `CONFIRMATION_BOX_ERROR`: default error code returned by confirm-box functions in case of fail.<br>
 
-**Responses**:
+**Responses**:<br>
 `CONFIRM_BOX_RESPONSE_NULL`: when the confirmation time expires.<br>
 `CONFIRM_BOX_RESPONSE_YES`: when the player confirm the box.<br>
 `CONFIRM_BOX_RESPONSE_NO`: when the player cancel the box.<br>
@@ -56,6 +56,34 @@ ConfirmBox:MyCallback(playerid, response, selectable, controllable, Float:percen
     // but if you need percent, you can't skip all params before it.
 
     // here will be your code.
+    return 1;
+}
+```
+
+## Example
+There is an example of how to use it.
+
+```pawn
+CMD:deagle(playerid, params[])
+{
+    ShowPlayerConfirmBox(playerid, DeagleBox, "Are you sure you want to get a Desert Eagle? This will cost you $5.", "Desert Eagle");
+    return 1;
+}
+ConfirmBox:DeagleBox(playerid, response, selectable, controllable, Float:percent)
+{
+    if(response == CONFIRM_BOX_RESPONSE_NULL)
+    {
+        return SendClientMessage(playerid, 0xFF0000FF, "You just have to confirm, what's so hard?");
+    }
+    if(response == CONFIRM_BOX_RESPONSE_YES)
+    {
+        if(percent <= 25.00)
+        {
+            return SendClientMessage(playerid, 0xFF0000FF, "You confirmed too late, i'm sorry.");
+        }
+        SendClientMessage(playerid, -1, "You got a Desert Eagle.");
+        GivePlayerWeapon(playerid, WEAPON_DEAGLE, 100);
+    }
     return 1;
 }
 ```
