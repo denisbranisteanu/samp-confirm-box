@@ -1,12 +1,10 @@
 {
 	"user": "GroWy",
 	"repo": "samp-confirm-box",
-	"entry": "confirm-box.pwn",
-	"output": "confirm-box.amx",
+	"tag": "1.0.0",
+	"entry": "test.pwn",
+	"output": "test.amx",
 	"dependencies": [
 		"sampctl/samp-stdlib"
-	],
-	"runtime": {
-		"mode": "y_testing"
-	}
+	]
 }
