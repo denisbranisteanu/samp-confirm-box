@@ -21,6 +21,16 @@ Include in your code and begin using the library:
 ## Functions
 ```pawn
 ShowPlayerConfirmBox(playerid, callback[], description[], title[], confirm_time, bool:selectable, bool:controllable, bool:sound);
+
+/*
+    - callback: The function name to be called.
+    - title: Confirmation Box's title.
+    - description: Confirmation Box's description.
+    - confirm_time: Displaying time in ms (eg: 1000ms who means 1 second).
+    - selectable: Specify if the player needs to select the buttons instead of using keys Y/N.
+    - controllable: Specify if the player will be able to move his character.
+    - sound: Specify if the box will make sounds.
+*/
 ```
 Displays to the player the confirmation box.
 ```pawn
@@ -69,6 +79,7 @@ CMD:deagle(playerid, params[])
     ShowPlayerConfirmBox(playerid, DeagleBox, "Are you sure you want to get a Desert Eagle? This will cost you $5.", "Desert Eagle");
     return 1;
 }
+
 ConfirmBox:DeagleBox(playerid, response, selectable, controllable, Float:percent)
 {
     if(response == CONFIRM_BOX_RESPONSE_NULL)
