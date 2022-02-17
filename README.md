@@ -39,7 +39,7 @@ HidePlayerConfirmBox(playerid);
 Hides the player's confirmation box.
 
 ## Definitions
-`CONFIRMATION_BOX_TIME`: default value in milliseconds in how long the box will disappear.
+`CONFIRMATION_BOX_TIME`: default value in milliseconds in how long the box will disappear.<br>
 `CONFIRM_BOX_UPDATE_RATE`: default update rate for the timer, how smaller is, how smooth is the bar effect (low values may impact your performance).<br>
 `CONFIRMATION_BOX_ERROR`: default error code returned by confirm-box functions in case of fail.<br>
 
