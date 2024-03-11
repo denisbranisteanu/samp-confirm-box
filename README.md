@@ -9,7 +9,7 @@ This library provides a simple [confirmation box](https://i.imgur.com/uyMuSAk.pn
 Simply install to your project:
 
 ```bash
-sampctl package install GroWy/samp-confirm-box
+sampctl package install denisbranisteanu/samp-confirm-box
 ```
 
 Include in your code and begin using the library:
